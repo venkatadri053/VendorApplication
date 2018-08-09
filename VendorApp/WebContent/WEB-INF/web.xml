@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>/WEB-INF/sample-servlet.xml</param-value>
+  </context-param>
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+  <servlet>
+    <servlet-name>sample</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>sample</servlet-name>
+    <url-pattern>/mvc/*</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>test</servlet-name>
+    <servlet-class>com.sun.jersey.spi.spring.container.servlet.SpringServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>test</servlet-name>
+    <url-pattern>/rest/*</url-pattern>
+  </servlet-mapping>
+ <!--  <filter>
+    <filter-name>SessionCheckFilter</filter-name>
+    <filter-class>com.app.filter.SessionCheckFilter</filter-class>
+    <init-param>
+    	<param-name>noCheckUrls</param-name>
+    	<param-value>/VendorApp/mvc/userLogin,/VendorApp/mvc/userReg,/VendorApp/mvc/insertUser,/VendorApp/mvc/loginUser</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>SessionCheckFilter</filter-name>
+    <url-pattern>/mvc/*</url-pattern>
+  </filter-mapping>
+  
+  <error-page>
+  	<error-code>404</error-code>
+  	<location>/myerror.jsp</location>
+  </error-page>
+  
+  <error-page>
+  	<error-code>500</error-code>
+  	<location>/myerror.jsp</location>
+  </error-page>
+  
+  <error-page>
+  	<exception-type>java.lang.NullPointerException</exception-type>
+  	<location>/myerror.jsp</location>
+  </error-page>
+   -->
+  
+  
+</web-app>
